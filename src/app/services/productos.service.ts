@@ -22,13 +22,14 @@ export class ProductosService {
 
 
   		this.productos = resp;
-
-  		setTimeout(() => {
-  			this.cargando = false;
-  		}, 2000);
+      this.cargando = false;
 
   	});
 
+  }
+
+  getProducto( id: string ){
+    return this.http.get(`https://portafolio-7b9ea.firebaseio.com/productos/${ id }.json`);
   }
 
 }
